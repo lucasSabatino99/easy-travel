@@ -17,11 +17,13 @@ export const Container = styled.div`
     margin: 0 auto;
     display: grid;
     grid-template-columns: 280px 1fr;
+    color: var(--white);
   }
 
   .wrapper-left {
     display: flex;
     flex-direction: column;
+    padding: 64px 0 0 0;
     width: 100%;
   }
 
@@ -34,22 +36,32 @@ export const Container = styled.div`
   }
 
   .title {
-    color: var(--white);
     font-size: 48px;
     margin-bottom: 30px;
+    font-family: 'Sora', sans-serif;
   }
 
   .subtitle {
-    width: 279px;
+    width: 340px;
     font-size: 16px;
-    color: var(--white);
     margin-bottom: 24px;
   }
 
   span.subline {
-    display: inline-block;
-    height: 5px;
+    display: block;
+    height: 1px;
     width: 50px;
-    border: 1px solid red;
+    border: 2px solid var(--orange-ligth);
+    border-radius: 3px;
+  }
+
+  .icon-play {
+    font-size: 30px;
+    margin-right: 12px;
+    color: var(--orange);
+  }
+
+  .play-video {
+    display: flex;
   }
 `;

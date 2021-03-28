@@ -58,11 +58,9 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font: 16px 'Roboto', sans-serif;
+    font-family: 'Mukta', sans-serif;
+    font-weight: 400;
   }
-
-  /* font-family: 'Sora', sans-serif;
-  font-family: 'Source Sans Pro', sans-serif; */
 
   html {
     @media (max-width: 1080px) {
