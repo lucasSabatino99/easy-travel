@@ -10,6 +10,10 @@ export default createGlobalStyle`
  :root {
   // Colors 
 
+  //background
+
+  --modal: rgba(100,100,100,0.3);
+
   // Primary colors
   --orange: #F95E3F;
   --orange-ligth: #FF7457;

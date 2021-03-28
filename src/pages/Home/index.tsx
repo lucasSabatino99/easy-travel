@@ -1,21 +1,15 @@
 import { FC, useCallback } from 'react';
-import { FiPlayCircle } from 'react-icons/fi';
 import { ButtonPrimary } from '../../components/ButtonPrimary';
-import { ButtonSecundary } from '../../components/ButtonSecundary';
 import { useToast } from '../../hooks/toast';
 import { Container } from './styles';
 import { Assistant } from '../../components/Assistant';
-import avatarHenrique from '../../assets/svg/avatar-henrique.svg';
-import avatarJacquin from '../../assets/svg/avatar-jacquin.svg';
-
-const parametro = 'padrao';
-const Avatars = {
-  padrao: <img src={avatarHenrique} alt="avatar padrao" />,
-  frances: <img src={avatarJacquin} alt="avatar tompero" />,
-};
 
 const Home: FC = () => {
   const { addToast } = useToast();
+
+  const handleCallChat = () => {
+    console.log('teste');
+  };
   const handleAddToast = useCallback(() => {
     setTimeout(() => {
       addToast({
@@ -36,6 +30,7 @@ const Home: FC = () => {
         <div className="content">
           <div className="wrapper-left">
             <svg
+              className="logo"
               width="125"
               height="42"
               viewBox="0 0 125 42"
@@ -73,24 +68,116 @@ const Home: FC = () => {
             </div>
             <div className="subtitle">
               <p>
-                Conheça sobre um dos locais mais procurado do mundo, deixe que
-                nosso assistente virtual te ajude nessa jornada!
+                Conheça sobre um dos locais mais
+                <br /> procurado do mundo, deixe que nosso
+                <br /> assistente virtual te ajude nessa jornada!
               </p>
             </div>
             <div className="play-video">
-              <FiPlayCircle className="icon-play" /> Assista agora
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g filter="url(#filter0_d)">
+                  <circle
+                    cx="24"
+                    cy="20"
+                    r="19.5"
+                    stroke="url(#paint0_linear)"
+                  />
+                </g>
+                <path
+                  d="M21 14L30.3333 20L21 26V14Z"
+                  fill="url(#paint1_linear)"
+                  stroke="url(#paint2_linear)"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <defs>
+                  <filter
+                    id="filter0_d"
+                    x="0"
+                    y="0"
+                    width="48"
+                    height="48"
+                    filterUnits="userSpaceOnUse"
+                    colorInterpolationFilters="sRGB"
+                  >
+                    <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                    <feColorMatrix
+                      in="SourceAlpha"
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                    />
+                    <feOffset dy="4" />
+                    <feGaussianBlur stdDeviation="2" />
+                    <feColorMatrix
+                      type="matrix"
+                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in2="BackgroundImageFix"
+                      result="effect1_dropShadow"
+                    />
+                    <feBlend
+                      mode="normal"
+                      in="SourceGraphic"
+                      in2="effect1_dropShadow"
+                      result="shape"
+                    />
+                  </filter>
+                  <linearGradient
+                    id="paint0_linear"
+                    x1="36.1458"
+                    y1="5.07143"
+                    x2="12.2684"
+                    y2="28.7263"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#F95E3F" />
+                    <stop offset="1" stopColor="#FF7457" />
+                  </linearGradient>
+                  <linearGradient
+                    id="paint1_linear"
+                    x1="28.5007"
+                    y1="15.5214"
+                    x2="21.5738"
+                    y2="20.8588"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#F95E3F" />
+                    <stop offset="1" stopColor="#FF7457" />
+                  </linearGradient>
+                  <linearGradient
+                    id="paint2_linear"
+                    x1="28.5007"
+                    y1="15.5214"
+                    x2="21.5738"
+                    y2="20.8588"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="#F95E3F" />
+                    <stop offset="1" stopColor="#FF7457" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              Assista agora
             </div>
           </div>
 
           <div className="wrapper-rigth">
-            <Assistant />
-            {Avatars[parametro]}
-            <ButtonPrimary onClick={handleAddToast} type="button">
-              Planejar minha viagem
+            <ButtonPrimary onClick={handleCallChat} type="button">
+              Planejar minha viagem para a França
             </ButtonPrimary>
           </div>
         </div>
       </Container>
+      <Assistant />
     </>
   );
 };
